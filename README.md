@@ -47,14 +47,9 @@ ansible-playbook -i inventory.ini playbook.yml
 **Vérifier le résultat**  
 ```
 curl http://localhost
-```
-**Forward du port 80 qui est le port d'exposition de votre serveur Nginx**  
-```
-kubectl -n pra port-forward svc/flask 8080:80 >/tmp/web.log 2>&1 &
-```
-  
+```  
 ---------------------------------------------------  
-**Réccupération de l'URL de votre application Flask**. Votre application Flask est déployée sur le cluster K3d. Pour obtenir votre URL cliquez sur l'onglet **[PORTS]** dans votre Codespace (à coté de Terminal) et rendez public votre port 8080 (Visibilité du port). Ouvrez l'URL dans votre navigateur et c'est terminé.  
+**Réccupération de l'URL de votre serveur Nginx**. Votre serveur Nginx (et sa page Web) est déployé dans Codespace. Pour obtenir votre URL cliquez sur l'onglet **[PORTS]** dans votre Codespace (à coté de Terminal), ouvrez le port 80 et rendez public votre port (Visibilité du port). Ouvrez l'URL dans votre navigateur et c'est terminé.  
   
 ---------------------------------------------------
 Séquence 3 : Déploiement de l'infrastructure
